@@ -1,7 +1,5 @@
 # HTTP Request Message Body Length Limit Filter
 
-[![Travis CI Build Status](https://travis-ci.org/antonywarner/bodylimiter.png)](https://travis-ci.org/antonywarner/bodylimiter)
-
 Servlet Filter that limits the size of the http request message body.
 Rejects a Http request (with status code 413) if its body is bigger then the one specified as param.
 
@@ -18,3 +16,9 @@ The purpose of the filter is to prevent the client to post too large http reques
 
 #### Notes
 - Tomcat has a *maxPostSize* [attribute](https://tomcat.apache.org/tomcat-8.0-doc/config/http.html) on connectors, but this limits just certain kind of posts, see post on [stack overflow](http://stackoverflow.com/questions/14075287/does-maxpostsize-apply-to-multipart-form-data-file-uploads)
+
+#### Fork Notes
+
+Forked from csviri/bodylimiter with the following additions:
+- Added non-chunk content-length spoofing protection 
+- Unit tests
